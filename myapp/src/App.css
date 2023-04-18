@@ -1,13 +1,4 @@
-.App {
-  min-height: 100vh;  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-color: #282c34; */
-  background-color: #85FFBD;
 
-
-}
 .container {
   display: flex;
   height: 80vh;
@@ -23,7 +14,7 @@
 .todoForm {
   display: flex;
   justify-content: space-around;
-  min-width: 20%;
+  max-width: 100%;
 }
 
 input {
@@ -52,7 +43,7 @@ button {
   background-color: #5dadf8;
   padding: 10px 20px;
   display: flex;
-  width: 450px;
+  width: 400px;
   align-items: center;
 }
 .todoText {
@@ -77,4 +68,9 @@ h1{
 }
 .input-text{
   font: 1em "Fira Sans", sans-serif;
+}
+@media only screen and (max-width: 470px) {
+  .singleTodo {
+    width:300px;
+  }
 }
