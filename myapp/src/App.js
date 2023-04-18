@@ -4,8 +4,8 @@ import TodoForm from "./components/ToDoForm";
 import ToDoList from "./components/ToDoList";
 
 const App = () => {
-  const [todo, setTodo] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todo, setTodo] = useState(""); // use to add single todo
+  const [todos, setTodos] = useState([]); // This array will contain all the Todos
   const [editId, setEditId] = useState(0);
 
   const handleSubmit = (e) => {
@@ -31,18 +31,17 @@ const App = () => {
   };
 
   const handleDelete = (id) => {
-    const delTodo = todos.filter((to) => to.id !== id);
+    const delTodo = todos.filter((to) => to.id !== id); // delTodo will contain alll the todo except one whose id was equal to the passed id parameter because we have deleted that
     setTodos([...delTodo]);
   };
 
   const handleEdit = (id) => {
-    const editTodo = todos.find((i) => i.id === id);
+    const editTodo = todos.find((i) => i.id === id); // it will return an object with the same id as passsed one
     setTodo(editTodo.todo);
     setEditId(id);
   };
 
   return (
-    <div className="App">
       <div className="container">
         <h1>Todo List App</h1>
         <TodoForm
@@ -58,7 +57,6 @@ const App = () => {
           handleDelete={handleDelete}
         />
       </div>
-    </div>
   );
 };
 
