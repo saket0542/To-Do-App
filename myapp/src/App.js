@@ -6,20 +6,20 @@ import ToDoList from "./components/ToDoList";
 const App = () => {
   const [todo, setTodo] = useState(""); // use to add single todo
   const [todos, setTodos] = useState([]); // This array will contain all the Todos
-  const [editId, setEditId] = useState(0);
+  const [editId, setEditId] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (editId) {
       const editTodo = todos.find((i) => i.id === editId);
-      const updatedTodos = todos.map((t) =>
-        t.id === editTodo.id
-          ? (t = { id: t.id, todo })
-          : { id: t.id, todo: t.todo }
-      );
-      setTodos(updatedTodos);
-      setEditId(0);
+      editTodo.todo=todo;
+      // const updatedTodos = todos.map((t) =>
+      //   t.id === editTodo.id
+      //     ? (t = { id: t.id, todo })
+      //     : { id: t.id, todo: t.todo }
+      // );
+      // setTodos(updatedTodos);
+      setEditId("");
       setTodo("");
       return;
     }
